@@ -1,6 +1,6 @@
 <template>
+
     <!-- Here the Tailwind Login page starts -->
-  
     <div class="container px-6 mx-auto">
       <div
         class="flex flex-col text-center md:text-left md:flex-row h-screen justify-evenly md:items-center"
@@ -28,11 +28,11 @@
           </p>
         </div>
         <div class="w-full md:w-full lg:w-9/12 mx-auto md:mx-0">
-          <div class="bg-white p-10 flex flex-col w-full shadow-xl rounded-xl">
+          <div class="bg-white p-10 pb-2 flex flex-col w-full shadow-xl rounded-xl">
             <h2 class="text-2xl font-bold text-gray-800 text-left mb-5">
               Welcome back! 👋
             </h2>
-            <form class="w-full">
+            <form @submit.prevent="signIn" class="w-full">
               <div id="input" class="flex flex-col w-full my-5">
                 <label for="username" class="text-gray-800 font-bold mb-2"
                   >Username</label
@@ -59,7 +59,6 @@
               </div>
               <div id="button" class="flex flex-col w-full my-5">
                 <button
-                  @submit.prevent="signIn"
                   type="submit"
                   class="w-full py-4 bg-green-600 rounded-lg text-white"
                 >
@@ -83,16 +82,12 @@
                     <div class="font-bold">Sign In</div>
                   </div>
                 </button>
-                <div class="flex justify-evenly mt-5">
+                <div class="flex flex-col justify-evenly mt-5">
+                  <PersonalRouter :route="route" :buttonText="buttonText" class="w-full mb-4 text-center font-medium text-green-600" />
                   <a
                     href="#"
-                    class="w-full text-center font-medium text-green-600"
+                    class="w-full mt-4 text-center font-medium text-green-600"
                     >Password recovery</a
-                  >
-                  <a
-                    href="#"
-                    class="w-full text-center font-medium text-green-600"
-                    >Sing Up</a
                   >
                 </div>
               </div>
@@ -100,20 +95,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- Here the original Login page starts  -->
-    <div>
-        <form >
-          <label for="email"></label>
-          <input type="email" v-model="email" name="email" placeholder="dave@mail.com">
-          <label for="password"></label>
-          <input type="password" v-model="password" name="password" placeholder="***********">
-          <button @submit.prevent="signIn">Sign In</button>
-        </form>
-
-        <PersonalRouter :route="route" :buttonText="buttonText" />
-        <p>Time to build up the Final Project!</p>
-        <p class="wu-text">Wu Tang Forever</p>
     </div>
 </template>
 
@@ -127,7 +108,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/sign-up";
-const buttonText = "Test the Sign Up Route";
+const buttonText = "Sign Up";
 
 // Input Fields
 const email = ref("");

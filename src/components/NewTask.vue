@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container flex flex-col items-center justify-center px-6 mx-auto">
     <!-- Status Message -->
     <div v-show="errMessage || errMessageBool">
       <p>{{ errMessage }}</p>
@@ -7,21 +7,28 @@
     </div>
 
     <!-- Create -->
-    <p>Add a new Task</p>
+    <h2 class="text-xl font-bold text-gray-800 mb-2">Add a new Task</h2>
     <!-- Form -->
     <!-- <form @submit.prevent="$emit('taskList', taskName)"> -->
-    <div>
-      <input type="text"
+    <div class="flex flex-col">
+      <input
+        type="text"
         v-model="taskName"
         placeholder="Add a Task Title"
         required
+        class="border-green-600 border-2 rounded w-80 px-2 py-1 my-2 placeholder: font-semibold"
       />
       <input
         type="text"
         v-model="taskDescription"
         placeholder="Add a Task Description"
+        class="border-green-600 border-2 rounded w-80 px-2 py-1 my-2 placeholder: font-semibold"
       />
-      <button @click.prevent="addTask2">Add</button>
+      <button
+        @click.prevent="addTask2" class="w-full py-2 my-2 bg-green-600 rounded-lg text-white font-bold hover:bg-green-500"
+      >
+      Add
+      </button>
     </div>
   </div>
 </template>
@@ -34,9 +41,8 @@ import { useRouter } from "vue-router";
 import { useTaskStore } from "../stores/task";
 import { storeToRefs } from "pinia";
 
-
 // constant to save a variable that define the custom event that will be emitted to the homeView
-const emit = defineEmits(['childNewTask'])
+const emit = defineEmits(["childNewTask"]);
 
 // constant to save a variable that holds the value of the title input field of the new task
 
@@ -63,13 +69,11 @@ const addTask2 = async () => {
       errorMsg.value = null;
     }, 5000);
   } else {
-    emit('childNewTask', taskName.value, taskDescription.value);
+    emit("childNewTask", taskName.value, taskDescription.value);
     taskName.value = null;
     taskDescription.value = null;
   }
 };
-
-
 </script>
 
 <style></style>
