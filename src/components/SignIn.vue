@@ -89,6 +89,7 @@
                     class="w-full mt-4 text-center font-medium text-green-600"
                     >Password recovery</a
                   >
+                  <PersonalRouter :route="recover" :buttonText="buttonRecovery" class="w-full mb-4 text-center font-medium text-green-600" />
                 </div>
               </div>
             </form>
@@ -101,6 +102,8 @@
 <script setup>
 import { ref, computed } from "vue";
 import PersonalRouter from "./PersonalRouter.vue";
+import PasswordRecovery from "./PasswordRecovery.vue";
+import ResetPassword from "../components/ResetPassword.vue";
 import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
@@ -109,6 +112,9 @@ import { storeToRefs } from "pinia";
 // Route Variables
 const route = "/auth/sign-up";
 const buttonText = "Sign Up";
+
+const recover = "/auth/recovery"
+const buttonRecovery = "Password Recovery";
 
 // Input Fields
 const email = ref("");

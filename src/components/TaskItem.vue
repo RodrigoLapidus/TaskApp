@@ -1,6 +1,81 @@
 <template>
-  <div>
-    <div>
+  <div class="flex flex-row md:flex-col">
+    <!-- Here starts the TailwindCSS component -->
+
+    <div
+      class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+    >
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        {{ task.title }}
+      </h5>
+
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        {{ task.description }}
+      </p>
+
+      <div class="flex flex-row justify-between">
+        <!-- Button to see if task has been completed -->
+        <button
+          @click="completeTask2(task.id, task.is_complete)"
+          v-show="!task.is_complete"
+        >
+          <CheckCircleIcon class="h-10 w-10 text-white bg-green-600 rounded-full"/>
+        </button>
+
+        <button
+          @click="completeTask2(task.id, task.is_complete)"
+          v-show="task.is_complete"
+        >
+          <CheckCircleIcon class="h-10 w-10 text-green-600 border-green-600"/>
+        </button>
+
+        <!-- Button to edit the task -->
+        <button
+          @click="toggleOptions"
+        >
+          <PencilIcon class="h-10 w-10 text-yellow-400"/>
+        </button>
+
+        <!-- Button to delete the task -->
+        <button @click="removeTask2(task.id)">
+          <TrashIcon class="h-10 w-10 text-red-400"/>
+        </button>
+        
+      </div>
+
+      <!-- New line that appears to edit the task -->
+      <div>
+        <input
+          v-show="toggle"
+          type="text"
+          v-model="newTitle"
+          class="border-green-600 border-2 rounded w-80 px-2 py-1 my-2 placeholder: font-semibold"
+        />
+        <input
+          v-show="toggle"
+          type="text"
+          v-model="newDescription"
+          class="border-green-600 border-2 rounded w-80 px-2 py-1 my-2 placeholder: font-semibold"
+        />
+        <button
+          @click="toggleTask2"
+          v-show="toggle"
+          class="w-full py-2 my-2 bg-yellow-500 rounded-lg text-white font-bold hover:bg-yellow-400"
+        >
+          edit task
+        </button>
+      </div>
+
+      <!-- <a href="#" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Read more
+            <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </a> -->
+    </div>
+
+    <!-- Here starts the original component -->
+    <!-- <div>
       <p>{{ task.title }}</p>
       <p>{{ task.description }}</p>
       <button @click="completeTask2(task.id, task.is_complete)" v-show="!task.is_complete" style="background-color: lightblue">Completed?</button>
@@ -11,58 +86,59 @@
         <button @click="toggleTask2" v-show="toggle">edit task</button>
         <button @click="toggleOptions" v-show="toggle">Edit</button>
       <button @click="removeTask2(task.id)" style="background-color: lightcoral">Delete</button>
-    </div>
-    <!-- <div v-if="printThis">
-      Aquí hay que añadir insertar de forma añadida las nuevas tasks 
-      <p :taskN="taskName">{{newTask}}</p>
-      <p :taskD="taskDescription">{{newTaskDescription}}</p>-->
-      
-    <!--<button @click="tasks">Click to debug</button>-->
+    </div> -->
   </div>
 </template>
 
 <script setup>
-  // import { defineProps } from 'vue';
-  import { ref, computed } from "vue";
-  import PersonalRouter from "./PersonalRouter.vue";
-  import { supabase } from "../supabase";
-  import { useRouter } from "vue-router";
-  import { useTaskStore } from "../stores/task";
-  import { storeToRefs } from "pinia";
+// import { defineProps } from 'vue';
+import { ref, computed } from "vue";
+import PersonalRouter from "./PersonalRouter.vue";
+import { supabase } from "../supabase";
+import { useRouter } from "vue-router";
+import { useTaskStore } from "../stores/task";
+import { storeToRefs } from "pinia";
 
-  const newTitle = ref("");
-  const newDescription = ref("");
-  const toggle = ref(false);
+import { CheckCircleIcon } from '@heroicons/vue/24/solid'
+import { PencilIcon } from '@heroicons/vue/24/solid'
+import { TrashIcon } from '@heroicons/vue/24/solid'
 
-  const props = defineProps (['task', 'toggle']);
+const newTitle = ref("");
+const newDescription = ref("");
+const toggle = ref(false);
 
+const props = defineProps(["task", "toggle"]);
 
-  const emit = defineEmits (['childEditTask', 'childCompleteTask', 'childDeleteTask']);
+const emit = defineEmits([
+  "childEditTask",
+  "childCompleteTask",
+  "childDeleteTask",
+]);
 
-  const removeTask2 = async (id) => {
-    emit('childDeleteTask', id);
+const removeTask2 = async (id) => {
+  emit("childDeleteTask", id);
+};
+
+function toggleOptions() {
+  toggle.value = !toggle.value;
+  newTitle.value = props.task.title;
+  newDescription.value = props.task.description;
+}
+
+const toggleTask2 = async () => {
+  const newValues = {
+    newTitle: newTitle.value,
+    newDescription: newDescription.value,
+    oldIdValue: props.task,
   };
+  emit("childEditTask", newValues);
+  (newTitle.value = ""), (newDescription.value = "");
+  toggle.value = !toggle.value;
+};
 
-  function toggleOptions() {
-    toggle.value=!toggle.value;
-    newTitle.value = props.task.title;
-    newDescription.value = props.task.description
-  };
-
-  const toggleTask2 = async () => {
-    const newValues = {
-      newTitle: newTitle.value,
-      newDecription: newDescription.value,
-      oldIdValue: props.task
-    }
-    emit('childEditTask',  newValues);
-    newTitle.value = "",
-    newDescription.value = ""
-  };
-
-  const completeTask2 = async (id, completedBool) => {
-    emit ('childCompleteTask', id, completedBool);
-  }
+const completeTask2 = async (id, completedBool) => {
+  emit("childCompleteTask", id, completedBool);
+};
 
 /*
   const errorMsg = ref("");
@@ -86,8 +162,6 @@
 // ])
 
 // const props = defineProps(["ENTER-PROP-HERE"]);
-
-
 </script>
 
 <style></style>

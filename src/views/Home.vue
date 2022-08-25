@@ -2,8 +2,9 @@
   <div>
     <Nav />
     <NewTask @childNewTask="taskAddition" />
-    <!--<h1>{{ taskStore.fetchTasks().tasks }}</h1>-->
-    <TaskItem
+
+    <div class="flex flex-col md:flex-row">
+      <TaskItem class="flex flex-row md:flex-col"
       :task="tarea"
       v-for="(tarea, index) in taskStore.tasks"
       :key="index"
@@ -11,6 +12,8 @@
       @childEditTask="taskToggle"
       @childCompleteTask="taskCompletion"
     />
+    </div>
+    
     <Footer />
   </div>
 </template>
@@ -26,6 +29,8 @@ import { storeToRefs } from "pinia";
 
 import Nav from "../components/Nav.vue";
 import SignOut from "../components/SignOut.vue";
+import PasswordRecovery from "../components/PasswordRecovery.vue";
+import ResetPassword from "../components/ResetPassword.vue";
 import Footer from "../components/Footer.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";

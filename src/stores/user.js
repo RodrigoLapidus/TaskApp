@@ -34,10 +34,19 @@ export const useUserStore = defineStore("user", {
         console.log(this.user);
       }
     },
-    //sign out of the current session
+    // sign out of the current session
     async signOut() {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
+    },
+    // recover password
+    async recoverPassword(email) {
+      const { data, error } = await supabase.auth.api.resetPasswordForEmail(email);
+      if (error) throw error;
+    },
+    // reset password
+    async resetPassword(email) {
+      // here goes the function
     },
     },
 },

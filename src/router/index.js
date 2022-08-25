@@ -4,6 +4,8 @@ import Home from "../views/Home.vue";
 import SignIn from "../components/SignIn.vue";
 import SignUp from "../components/SignUp.vue";
 import SignOut from "../components/SignOut.vue";
+import PasswordRecovery from "../components/PasswordRecovery.vue";
+import ResetPassword from "../components/ResetPassword.vue";
 
 const routes = [
   { path: "/", component: Home },
@@ -13,6 +15,8 @@ const routes = [
     children: [
       { path: "login", component: SignIn },
       { path: "sign-up", component: SignUp },
+      { path: "recovery", component: PasswordRecovery},
+      { path: "reset", component: ResetPassword},
     ],
   },
 
