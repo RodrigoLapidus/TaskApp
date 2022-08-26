@@ -1,17 +1,17 @@
 <template>
-  <div class="flex flex-row md:flex-col">
+  <div class="flex flex-row md:flex-col h-full">
     <!-- Here starts the TailwindCSS component -->
 
     <div
-      class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+      class="p-6 m-4 mx-auto bg-white w-72 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
     >
       <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        class="w-full mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
       >
         {{ task.title }}
       </h5>
 
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <p class="w-full mb-3 font-normal text-gray-700 dark:text-gray-400">
         {{ task.description }}
       </p>
 
@@ -21,7 +21,7 @@
           @click="completeTask2(task.id, task.is_complete)"
           v-show="!task.is_complete"
         >
-          <CheckCircleIcon class="h-10 w-10 text-white bg-green-600 rounded-full"/>
+          <CheckCircleIcon class="h-10 w-10 text-white bg-green-600 hover:bg-green-500 rounded-full"/>
         </button>
 
         <button
@@ -35,12 +35,12 @@
         <button
           @click="toggleOptions"
         >
-          <PencilIcon class="h-10 w-10 text-yellow-400"/>
+          <PencilIcon class="h-10 w-10 text-yellow-400 hover:text-yellow-500"/>
         </button>
 
         <!-- Button to delete the task -->
         <button @click="removeTask2(task.id)">
-          <TrashIcon class="h-10 w-10 text-red-400"/>
+          <TrashIcon class="h-10 w-10 text-red-400 hover:text-red-500"/>
         </button>
         
       </div>
@@ -51,13 +51,13 @@
           v-show="toggle"
           type="text"
           v-model="newTitle"
-          class="border-green-600 border-2 rounded w-80 px-2 py-1 my-2 placeholder: font-semibold"
+          class="border-green-600 border-2 rounded w-full px-2 py-1 my-2 placeholder: font-semibold"
         />
         <input
           v-show="toggle"
           type="text"
           v-model="newDescription"
-          class="border-green-600 border-2 rounded w-80 px-2 py-1 my-2 placeholder: font-semibold"
+          class="border-green-600 border-2 rounded w-full px-2 py-1 my-2 placeholder: font-semibold"
         />
         <button
           @click="toggleTask2"

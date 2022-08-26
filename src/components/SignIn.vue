@@ -1,37 +1,28 @@
 <template>
 
     <!-- Here the Tailwind Login page starts -->
-    <div class="container px-6 mx-auto">
+    <div class="container px-6 bg-gray-50" >
+      
       <div
-        class="flex flex-col text-center md:text-left md:flex-row h-screen justify-evenly md:items-center"
+        class="flex flex-col text-center h-screen justify-evenly items-center"
       >
-        <div class="flex flex-col w-full">
-          <div>
-            <svg
-              class="w-20 h-20 mx-auto md:float-left fill-stroke text-gray-800"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-              ></path>
-            </svg>
-          </div>
-          <h1 class="text-5xl text-gray-800 font-bold">Client Area</h1>
-          <p class="w-5/12 mx-auto md:mx-0 text-gray-500">
-            Control and monitorize your website data from dashboard.
-          </p>
-        </div>
-        <div class="w-full md:w-full lg:w-9/12 mx-auto md:mx-0">
-          <div class="bg-white p-10 pb-2 flex flex-col w-full shadow-xl rounded-xl">
-            <h2 class="text-2xl font-bold text-gray-800 text-left mb-5">
+        <div>
+          <div class="bg-white p-10 pb-2 flex flex-col shadow-xl rounded-xl" id="login-positioning">
+            <div class="flex flex-col">
+              <div class="mx-auto mb-6" id="position-logo">
+                <img src="../../public/TaskZilla logo.JPG" alt="TaskZilla logo" >
+              </div>
+              <div class="col-1 flex flex-col items-center">
+                <h1 class="text-5xl text-gray-800 font-bold" id="task-zilla">TaskZilla</h1>
+                <p class="text-gray-500 text-lg">
+                For the long overdue
+                </p>
+              </div>
+            </div>
+              
+            <!-- <h2 class="text-2xl font-bold text-gray-800 text-left mb-5">
               Welcome back! 👋
-            </h2>
+            </h2> -->
             <form @submit.prevent="signIn" class="w-full">
               <div id="input" class="flex flex-col w-full my-5">
                 <label for="username" class="text-gray-800 font-bold mb-2"
@@ -89,7 +80,7 @@
                     class="w-full mt-4 text-center font-medium text-green-600"
                     >Password recovery</a
                   >
-                  <PersonalRouter :route="recover" :buttonText="buttonRecovery" class="w-full mb-4 text-center font-medium text-green-600" />
+                  <!-- <PersonalRouter :route="recover" :buttonText="buttonRecovery" class="w-full mb-4 text-center font-medium text-green-600" /> -->
                 </div>
               </div>
             </form>
@@ -151,6 +142,12 @@ const signIn = async () => {
 </script>
 
 <style>
+
+#position-logo {
+  justify-content: center;
+  width: 40%;
+}
+
 .wu-text {
   color: black;
 }
@@ -174,4 +171,15 @@ const signIn = async () => {
   display: inline-block;
   font-size: 16px;
 }
+
+/* @media (min-width:1536px){
+  #login-positioning {
+    float: center;
+    position: relative;
+    right: 120px;
+    top: 400px;
+    width: 65rem;
+    height: 110rem;
+  }
+} */
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex flex-col items-center justify-center px-6 mx-auto">
+  <div class="container flex flex-col items-center justify-center px-6 mx-auto mt-10 mb-8">
     <!-- Status Message -->
     <div v-show="errMessage || errMessageBool">
       <p>{{ errMessage }}</p>
@@ -7,9 +7,8 @@
     </div>
 
     <!-- Create -->
-    <h2 class="text-xl font-bold text-gray-800 mb-2">Add a new Task</h2>
+    <h2 class="text-2xl font-bold text-gray-800 mb-2">Add a new Task</h2>
     <!-- Form -->
-    <!-- <form @submit.prevent="$emit('taskList', taskName)"> -->
     <div class="flex flex-col">
       <input
         type="text"

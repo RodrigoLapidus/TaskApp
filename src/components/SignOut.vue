@@ -1,8 +1,13 @@
 <template>
-    <div>
+    <div class="pr-4">
         <button @click="signOut" class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">Sign Out</button>
     </div>
 </template>
+
+
+
+
+
 
 <script setup>
 import { ref, computed } from "vue";
