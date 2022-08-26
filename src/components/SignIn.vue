@@ -10,7 +10,7 @@
           <div class="bg-white p-10 pb-2 flex flex-col shadow-xl rounded-xl" id="login-positioning">
             <div class="flex flex-col">
               <div class="mx-auto mb-6" id="position-logo">
-                <img src="../../public/TaskZilla-logo.JPG" alt="TaskZilla logo" >
+                <img src="https://res.cloudinary.com/def7ecre1/image/upload/v1661513350/task%20app/TaskZilla-logo_jm6zms.jpg" alt="TaskZilla logo" >
               </div>
               <div class="col-1 flex flex-col items-center">
                 <h1 class="text-5xl text-gray-800 font-bold" id="task-zilla">TaskZilla</h1>
