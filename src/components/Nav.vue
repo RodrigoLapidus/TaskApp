@@ -5,7 +5,7 @@
     <p class="text-gray-800 font-bold text-xl flex justify-start ml-1">TaskZilla</p>
     </div>
     <div class="flex flex-row justify-between items-center">
-      <p class="font-semibold invisible md:visible">Welcome back,&nbsp</p>
+      <p class="font-semibold invisible md:visible">Welcome back,&nbsp;</p>
       <p class="font-bold mr-2 invisible md:visible">{{ name[0] }}👋</p>
       <SignOut />
     </div>
