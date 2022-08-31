@@ -1,76 +1,82 @@
-# Solar-Dollar
+# TaskZilla
 
-Esta web app es mi proyecto final para el bootcamp de frontend con Vue de Ironhack.
+This web app is my final project for the frontend bootcamp at Ironhack Barcelona (Vue.js curriculum).
 
-## Requisitos mínimos
+## Required Functionalities
 
-Los requsitos mínimos del trabajo final es la creación de una app en Vue.js que pueda registrar, modificar, marcar como completas y borrar tareas.
+The minimum requisits are the creaton of an app in Vue.js that is capable of registering, modifying, marking as complete and deleting tasks. It has to have a SignUp, SignIn and LogOut functionalities.
 
-## Pautas de trabajo
+## Stack
 
-El frontend ha de ser estético y permitir el uso y navegabilidad dentro de la app. El backend, usando supabase como backend as a service, tiene que utilizar las tareas de authentication (sign up, sign in, sign out) del usuario, incluido mandar un email para completar el registro en la app. Se espera que la app tenga más funcionalidades que lo anteriormente descrito. Las funcionalidades y especificaciones técnicas han de venir en el readme del proyecto.
+Vue.js for the functionalities, Pinia for the state management, TailwindCSS for the styling, Supabase for the backend.
 
-## Evaluación
+## Guidelines
 
-El proyecto se puntuará según las categorías de funcionalidad, documentación y estética.
+The frontend has to be aesthetic and allow the use of the app.
+The backend, using a DBaaS platform, has to allow for the SignUp, SignIn and LogOut of the user.
+Once logged in, the user must be able to utilize the functionalities of the site.
+
+## Grading
+
+The project will be evaluated based on its functionalities, documentation and design.
 
 ## Timeline
 
-### Viernes 19/08
+### Friday 19/08
 
 ```
-Estructuración del proyecto:
- - Concepto y funcionalidades de la página web
- - Responisve-first
- - Frontend con TailwindCSS (componentes responsive precreados)
- - Backend con Supabase
- - Priorización de las funcionalidades sobre el diseño
+Structuring of the Project:
+ - Concept and Functionalities of the web app
+ - Mobile-first
+ - Frontend with TailwindCSS
+ - Backend with Supabase
+ - Prioritization of Functionalities over Design
 ```
 
-### Fin de semana 20-21/08
+### Weekedn 20-21/08
 
 ```
- - Concepto y funcionalidades de la página web
- - SignUp, SignIn y SingOut exitosos en la app
+ - Concept and Functionalities
+ - SignUp, SignIn y SingOut successful
 ```
 
-### Lunes 22/08
+### Monday 22/08
 
 ```
- - Concepto y funcionalidades de la página web
- - SignUp, SignIn y SingOut exitosos en la app
- - Vistas con router-link en la navegación
+ - Concept and Functionalities
+ - SignUp, SignIn y SingOut successful
+ - Views with the Router Link
 ```
 
-### Martes 23/08
+### Tuesday 23/08
 
 ```
- - Diseño del frontend
- - Adición de funcionalidades
- - Review en mobile y desktop
- - Implementar feedback de diseñadores/UI
+ - Design of the Frontend
+ - Addition of new Functionalities
+ - Review on Mobile and Desktop
+ - Implementaation of UX/UI Feedback
  - Debugging
 ```
 
-### Miércoles 24/08
+### Wednesday 24/08
 
 ```
- - Diseño del frontend
- - Adición de funcionalidades
+ - Design of the Frontend
+ - Addition of new Functionalities
  - Debugging
- - Review 1-on-1 con un Teaching Assistant
+ - Review 1-on-1 with Teaching Assistant
 ```
 
-### Jueves 25/08
+### Thursday 25/08
 
 ```
- - Deployment de la página (Vercel o Netlify)
- - Preparación de la presentación
+ - Deployment of the Site (Vercel or Netlify)
+ - Preparation of the Project Presentation
 ```
 
-### Viernes 26/08
+### Friday 26/08
 
 ```
- - Presentación
- - Dar y recibir feedback a/de los compañeros
+ - Presentation
+ - Give and receive Feedback to/from peers
 ```
