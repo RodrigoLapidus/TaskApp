@@ -4,7 +4,7 @@
     <NewTask @childNewTask="taskAddition" />
 
     <div id="injection-of-cards" class="flex flex-col md:flex-wrap">
-      <TaskItem class="flex flex-row md:flex-wrap"
+      <TaskItem
       :task="tarea"
       v-for="(tarea, index) in taskStore.tasks"
       :key="index"
