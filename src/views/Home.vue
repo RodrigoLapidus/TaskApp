@@ -3,7 +3,7 @@
     <Nav />
     <NewTask @childNewTask="taskAddition" />
 
-    <div id="injection-of-cards" class="w-full flex flex-col md:flex-row">
+    <div id="injection-of-cards" class="w-max flex flex-col md:flex-row">
       <TaskItem
       :task="tarea"
       v-for="(tarea, index) in taskStore.tasks"
