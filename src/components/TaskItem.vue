@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row md:flex-col h-full">
+  <div>
     <!-- Here starts the TailwindCSS component -->
 
     <div
