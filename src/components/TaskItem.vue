@@ -1,9 +1,9 @@
 <template>
-  <div class="container flex flex-wrap mx-auto">
+  <div class="container flex flex-wrap content-start justify-items-center">
     <!-- Here starts the TailwindCSS component -->
 
     <div
-      class="p-6 m-4 my-auto bg-white w-72 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+      class="p-6 m-4 bg-white w-72 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
     >
       <h5
         class="w-full mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
