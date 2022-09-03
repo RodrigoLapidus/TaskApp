@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex flex-wrap content-start justify-items-center">
+  <div class="container flex flex-wrap items-start justify-center mx-auto">
     <!-- Here starts the TailwindCSS component -->
 
     <div
