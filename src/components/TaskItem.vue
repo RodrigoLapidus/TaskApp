@@ -72,6 +72,7 @@
           edit task
         </button>
       </div>
+    </div>
   </div>
 </template>
 
