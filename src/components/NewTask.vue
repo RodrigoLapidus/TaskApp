@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex flex-col items-center justify-center px-6 mx-auto mt-10 mb-8">
+  <div id="background-new-task" class="container flex flex-col items-center justify-center px-6 mx-auto mt-10 mb-8">
     <!-- Status Message -->
     <div v-show="errMessage || errMessageBool">
       <p>{{ errMessage }}</p>
@@ -75,4 +75,8 @@ const addTask2 = async () => {
 };
 </script>
 
-<style></style>
+<style>
+  #background-new-task{
+  background-image: url("https://res.cloudinary.com/def7ecre1/image/upload/v1662545653/task%20app/TaskZilla-background_cgcv66.jpg");
+}
+</style>

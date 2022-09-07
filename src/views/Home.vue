@@ -3,7 +3,7 @@
     <Nav />
     <NewTask @childNewTask="taskAddition" />
 
-    <div class="container flex flex-wrap justify-center md:mx-auto">
+    <div class="container flex flex-wrap items-start justify-center xl:justify-start">
       <TaskItem
       :task="tarea"
       v-for="(tarea, index) in taskStore.tasks"

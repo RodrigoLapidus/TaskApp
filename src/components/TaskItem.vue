@@ -3,7 +3,7 @@
     <!-- Here starts the TailwindCSS component -->
 
     <div
-      class="p-6 m-4 bg-white w-72 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+      class="p-6 m-4 bg-white w-72 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700" :class="task.is_complete ? 'bg-gray-200 text-gray-500' : 'bg-white'"
     >
       <h5
         class="w-full mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
@@ -11,7 +11,7 @@
         {{ task.title }}
       </h5>
 
-      <p class="w-full mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <p class="w-full mb-3 font-normal text-gray-700 dark:text-gray-400" :class="task.is_complete ? 'line-through' : ''">
         {{ task.description }}
       </p>
 

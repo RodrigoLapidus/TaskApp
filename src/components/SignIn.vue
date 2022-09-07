@@ -1,13 +1,13 @@
 <template>
 
     <!-- Here the Tailwind Login page starts -->
-    <div class="container px-6 bg-gray-50" >
+    <div id="background-sign-in" class="container px-6 bg-gray-50" >
       
       <div
         class="flex flex-col text-center h-screen justify-evenly items-center"
       >
         <div>
-          <div class="bg-white p-10 pb-2 flex flex-col shadow-xl rounded-xl" id="login-positioning">
+          <div class="bg-white p-10 pb-2 flex flex-col shadow-xl rounded-xl">
             <div class="flex flex-col">
               <div class="mx-auto mb-6" id="position-logo">
                 <img src="https://res.cloudinary.com/def7ecre1/image/upload/v1661513350/task%20app/TaskZilla-logo_jm6zms.jpg" alt="TaskZilla logo" >
@@ -143,43 +143,13 @@ const signIn = async () => {
 
 <style>
 
+#background-sign-in{
+  background-image: url("https://res.cloudinary.com/def7ecre1/image/upload/v1662545653/task%20app/TaskZilla-background_cgcv66.jpg");
+}
+
 #position-logo {
   justify-content: center;
   width: 40%;
 }
 
-.wu-text {
-  color: black;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0;
-}
-.input {
-  color: black;
-  margin-bottom: 1rem;
-}
-.button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-/* @media (min-width:1536px){
-  #login-positioning {
-    float: center;
-    position: relative;
-    right: 120px;
-    top: 400px;
-    width: 65rem;
-    height: 110rem;
-  }
-} */
 </style>
