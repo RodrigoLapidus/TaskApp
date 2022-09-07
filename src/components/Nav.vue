@@ -1,7 +1,7 @@
 <template>
   <div class="w-auto top-0 h-12 bg-white flex flex-row justify-between items-center">
     <div class="flex flex-row items-center">
-      <img class="h-10 w-18 pl-4" src="https://res.cloudinary.com/def7ecre1/image/upload/v1661513350/task%20app/TaskZilla-logo_jm6zms.jpg" alt="TaskZilla logo">
+      <img class="pl-4" height="100%" width="auto" src="https://res.cloudinary.com/def7ecre1/image/upload/v1661513350/task%20app/TaskZilla-logo_jm6zms.jpg" alt="TaskZilla logo">
     <p class="text-gray-800 font-bold text-xl flex justify-start ml-1">TaskZilla</p>
     </div>
     <div class="flex flex-row justify-between items-center">
