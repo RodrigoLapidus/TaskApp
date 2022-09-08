@@ -30,6 +30,8 @@ The project will be evaluated based on its functionalities, documentation and de
 
 ## Timeline
 
+<details><summary><b>Display Timeline</b></summary>
+
 ### Friday 19/08
 
 ```
@@ -88,3 +90,4 @@ Structuring of the Project:
  - Presentation
  - Give and receive Feedback to/from peers
 ```
+  </details>
