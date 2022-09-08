@@ -2,6 +2,14 @@
 
 This web app is my final project for the frontend bootcamp at Ironhack Barcelona (Vue.js curriculum).
 
+<p align="center">
+  <a href="#required-functionalities">Required Functionalities</a> •
+  <a href="#stack">Stack</a> •
+  <a href="#guidelines">Guidelines</a> •
+  <a href="#grading">Grading</a> •
+  <a href="#timeline">Timeline</a>
+</p>
+
 ## Required Functionalities
 
 The minimum requisits are the creaton of an app in Vue.js that is capable of registering, modifying, marking as complete and deleting tasks. It has to have a SignUp, SignIn and LogOut functionalities.
