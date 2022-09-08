@@ -100,4 +100,4 @@ Structuring of the Project:
 
 ## Lighthouse Performance
 
-![lighthouse](https://res.cloudinary.com/def7ecre1/image/upload/v1662645149/task%20app/TaskZilla-Lighthouse_c9qw5y.jpg)
+![lighthouse](https://res.cloudinary.com/def7ecre1/image/upload/v1662645779/task%20app/TaskZilla-Lighthouse_bmgtw9.jpg)
