@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://res.cloudinary.com/def7ecre1/image/upload/v1661513350/task%20app/TaskZilla-logo_jm6zms.jpg" alt="TaskZilla logo" width="200"></a>
+  <a href="https://taskzilla-topaz.vercel.app"><img src="https://res.cloudinary.com/def7ecre1/image/upload/v1661513350/task%20app/TaskZilla-logo_jm6zms.jpg" alt="TaskZilla logo" width="200"></a>
   <br>
   TaskZilla
   <br>
