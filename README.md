@@ -97,3 +97,7 @@ Structuring of the Project:
  - Give and receive Feedback to/from peers
 ```
   </details>
+
+## Lighthouse Performance
+
+![lighthouse](https://res.cloudinary.com/def7ecre1/image/upload/v1662645149/task%20app/TaskZilla-Lighthouse_c9qw5y.jpg)
