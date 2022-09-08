@@ -6,9 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">This web app is my final project for the frontend bootcamp at Ironhack Barcelona (Vue.js curriculum)</h4>
-
-This web app is my final project for the frontend bootcamp at Ironhack Barcelona (Vue.js curriculum).
+<h4 align="center">This web app is my final project for the frontend bootcamp at Ironhack Barcelona (Vue.js curriculum).</h4>
 
 <p align="center">
   <a href="#required-functionalities">Required Functionalities</a> •
