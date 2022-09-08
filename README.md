@@ -1,4 +1,10 @@
-# TaskZilla
+<h1 align="center">
+  <br>
+  <a href="https://res.cloudinary.com/def7ecre1/image/upload/v1661513350/task%20app/TaskZilla-logo_jm6zms.jpg" alt="TaskZilla logo" width="200"></a>
+  <br>
+  TaskZilla
+  <br>
+</h1>
 
 This web app is my final project for the frontend bootcamp at Ironhack Barcelona (Vue.js curriculum).
 
