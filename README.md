@@ -13,7 +13,8 @@
   <a href="#stack">Stack</a> •
   <a href="#guidelines">Guidelines</a> •
   <a href="#grading">Grading</a> •
-  <a href="#timeline">Timeline</a>
+  <a href="#timeline">Timeline</a> •
+  <a href="#lighthouse-performance">Lighthouse Performance</a>
 </p>
 
 ## Required Functionalities
