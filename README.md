@@ -1,6 +1,21 @@
-# TaskZilla
+<h1 align="center">
+  <br>
+  <a href="https://taskzilla-topaz.vercel.app"><img src="https://res.cloudinary.com/def7ecre1/image/upload/v1661513350/task%20app/TaskZilla-logo_jm6zms.jpg" alt="TaskZilla logo" width="200"></a>
+  <br>
+  TaskZilla
+  <br>
+</h1>
 
-This web app is my final project for the frontend bootcamp at Ironhack Barcelona (Vue.js curriculum).
+<h4 align="center">This web app is my final project for the frontend bootcamp at Ironhack Barcelona (Vue.js curriculum).</h4>
+
+<p align="center">
+  <a href="#required-functionalities">Required Functionalities</a> •
+  <a href="#stack">Stack</a> •
+  <a href="#guidelines">Guidelines</a> •
+  <a href="#grading">Grading</a> •
+  <a href="#timeline">Timeline</a> •
+  <a href="#lighthouse-performance">Lighthouse Performance</a>
+</p>
 
 ## Required Functionalities
 
@@ -21,6 +36,8 @@ Once logged in, the user must be able to utilize the functionalities of the site
 The project will be evaluated based on its functionalities, documentation and design.
 
 ## Timeline
+
+<details><summary><b>Display Timeline</b></summary>
 
 ### Friday 19/08
 
@@ -80,3 +97,8 @@ Structuring of the Project:
  - Presentation
  - Give and receive Feedback to/from peers
 ```
+  </details>
+
+## Lighthouse Performance
+
+![lighthouse](https://res.cloudinary.com/def7ecre1/image/upload/v1662645779/task%20app/TaskZilla-Lighthouse_bmgtw9.jpg)
