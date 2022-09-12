@@ -20,9 +20,7 @@
               </div>
             </div>
               
-            <!-- <h2 class="text-2xl font-bold text-gray-800 text-left mb-5">
-              Welcome back! 👋
-            </h2> -->
+
             <form @submit.prevent="signIn" class="w-full">
               <div id="input" class="flex flex-col w-full my-5">
                 <label for="username" class="text-gray-800 font-bold mb-2"
@@ -80,7 +78,10 @@
                     class="w-full mt-4 text-center font-medium text-green-600"
                     >Password recovery</a
                   >
-                  <!-- <PersonalRouter :route="recover" :buttonText="buttonRecovery" class="w-full mb-4 text-center font-medium text-green-600" /> -->
+                </div>
+                <div class="container flex flex-row justify-center">
+                  <div @click="signInWithGoogle"><img class="h-8 cursor-pointer mx-2" src="https://res.cloudinary.com/def7ecre1/image/upload/v1662996870/task%20app/Logo_Google_xfqaeb.png" alt="Google Login"></div>
+                  <div @click="signInWithGithub"><img class="h-8 cursor-pointer mx-2" src="https://res.cloudinary.com/def7ecre1/image/upload/v1662996881/task%20app/Logo_GitHub_zv1skp.png" alt="GitHub Login"></div>
                 </div>
               </div>
             </form>
@@ -128,6 +129,40 @@ const signIn = async () => {
   try {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signIn(email.value, password.value);
+    // redirects user to the homeView
+    redirect.push({ path: "/" });
+  } catch (error) {
+    // displays error message
+    errorMsg.value = `Error: ${error.message}`;
+    // hides error message
+    setTimeout(() => {
+      errorMsg.value = null;
+    }, 5000);
+  }
+};
+
+// Arrow function to Signin user with Google
+const signInWithGoogle = async () => {
+  try {
+    // calls the user store and send the users info to backend to logIn
+    await useUserStore().signInWithGoogle();
+    // redirects user to the homeView
+    redirect.push({ path: "/" });
+  } catch (error) {
+    // displays error message
+    errorMsg.value = `Error: ${error.message}`;
+    // hides error message
+    setTimeout(() => {
+      errorMsg.value = null;
+    }, 5000);
+  }
+};
+
+// Arrow function to Signin user with GitHub
+const signInWithGithub = async () => {
+  try {
+    // calls the user store and send the users info to backend to logIn
+    await useUserStore().signInWithGithub();
     // redirects user to the homeView
     redirect.push({ path: "/" });
   } catch (error) {

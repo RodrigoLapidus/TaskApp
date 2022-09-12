@@ -34,6 +34,18 @@ export const useUserStore = defineStore("user", {
         console.log(this.user);
       }
     },
+    // sign in with GitHub
+    async signInWithGithub() {
+      const { user, session, error } = await supabase.auth.signIn({
+        provider: 'github',
+      })
+    },
+    // sign in with GitHub
+    async signInWithGoogle() {
+      const { user, session, error } = await supabase.auth.signIn({
+        provider: 'google',
+      })
+    },
     // sign out of the current session
     async signOut() {
       const { error } = await supabase.auth.signOut();
