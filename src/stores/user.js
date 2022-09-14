@@ -38,7 +38,8 @@ export const useUserStore = defineStore("user", {
     async signInWithGithub() {
       const { user, session, error } = await supabase.auth.signIn({
         provider: 'github',
-      })
+      },
+      { redirectTo: 'https://taskzilla-topaz.vercel.app/?refresh=true' })
     },
     // sign in with GitHub
     async signInWithGoogle() {
