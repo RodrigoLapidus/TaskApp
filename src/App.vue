@@ -11,6 +11,8 @@ const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 
+const socialLogin = ref(false);
+
 
 onMounted(async () => {
   const appReady = ref(null);
