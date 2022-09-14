@@ -36,13 +36,13 @@ export const useUserStore = defineStore("user", {
     },
     // sign in with GitHub
     async signInWithGithub() {
-      const { user, error } = await supabase.auth.signIn({
+      const { user, session, error } = await supabase.auth.signIn({
         provider: 'github',
       })
     },
     // sign in with GitHub
     async signInWithGoogle() {
-      const { user, error } = await supabase.auth.signIn({
+      const { user, session, error } = await supabase.auth.signIn({
         provider: 'google',
       })
     },
