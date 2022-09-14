@@ -21,7 +21,13 @@ onMounted(async () => {
     console.log(user.value);
     console.log(socialLogin.value);
     console.log(socialLogin);
-    if (!user.value && !socialLogin) {
+
+    socialLogin = SignIn.socialLogin;
+    
+    if (!socialLogin) {
+      // continue to dashboard
+      router.push({ path: "/" });
+    } else if (!user.value) {
       // redirect them to logout if the user is not there
       appReady.value = true;
       router.push({ path: "/auth/login" });
