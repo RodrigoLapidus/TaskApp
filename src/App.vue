@@ -5,17 +5,21 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
 import { ref } from "vue";
 import { supabase } from "./supabase"
+import SignIn from "./components/SignIn.vue";
 
 const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 
+
 onMounted(async () => {
   const appReady = ref(null);
   try {
-    setTimeout(await userStore.fetchUser(), 1000); // here we call fetch user
+    await userStore.fetchUser(); // here we call fetch user
     console.log(user.value);
-    if (!user.value) {
+    console.log(socialLogin.value);
+    console.log(socialLogin);
+    if (!user.value && !socialLogin) {
       // redirect them to logout if the user is not there
       appReady.value = true;
       router.push({ path: "/auth/login" });
