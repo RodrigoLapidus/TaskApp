@@ -115,9 +115,6 @@ const password = ref("");
 // Error Message
 const errorMsg = ref("");
 
-// Social Media login
-const socialLogin = ref(false);
-
 //Show hide password variables
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
@@ -150,7 +147,7 @@ const signInWithGoogle = async () => {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signInWithGoogle();
     // redirects user to the homeView
-    socialLogin = true;
+    redirect.push({ path: "/" });
   } catch (error) {
     // displays error message
     errorMsg.value = `Error: ${error.message}`;
@@ -167,7 +164,7 @@ const signInWithGithub = async () => {
     // calls the user store and send the users info to backend to logIn
     await useUserStore().signInWithGithub();
     // redirects user to the homeView
-    socialLogin = true;
+    redirect.push({ path: "/" });
   } catch (error) {
     // displays error message
     errorMsg.value = `Error: ${error.message}`;

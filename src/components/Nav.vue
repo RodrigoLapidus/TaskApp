@@ -4,9 +4,14 @@
       <img class="h-10 pl-4" src="https://res.cloudinary.com/def7ecre1/image/upload/v1661513350/task%20app/TaskZilla-logo_jm6zms.jpg" alt="TaskZilla logo">
     <p class="text-gray-800 font-bold text-xl flex justify-start ml-1">TaskZilla</p>
     </div>
-    <div class="flex flex-row justify-between items-center">
-      <p class="font-semibold invisible md:visible">Welcome back,&nbsp;</p>
-      <p class="font-bold mr-2 invisible md:visible">{{ name[0] }}👋</p>
+    <div class="flex flex-col justify-center">
+      <div class="flex flex-row justify-between items-center">
+        <p class="font-semibold invisible md:visible">Welcome back,&nbsp;</p>
+        <p class="font-bold mr-2 invisible md:visible"> {{ name[0] }}👋</p>
+      </div>
+      <div>
+        <p>{{ currentDateTime() }}</p>
+      </div>
       <SignOut />
     </div>
   </div>
@@ -21,15 +26,28 @@ const email = useUserStore().user.email
 
 const name = email.split("@");
 
-//constant to save a variable that will hold the use router method
+// to display the date
 
-// constant to save a variable that will get the user from store with a computed function imported from vue
-
-// constant that calls user email from the useUSerStore
-
-// constant that saves the user email and cleans out the @client from the user
-
-// async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
+const currentDateTime = () => {
+    const current = new Date();
+    const monthName = toMonthName();
+    const dayName = toDayName();
+    const date = `${current.getDate()} ${monthName} ${current.getFullYear()}`;
+    const justDate = `${dayName} ${date}`;
+    return justDate;
+};
+const toMonthName = () => {
+    const monthofYearName = new Date().toLocaleString("en-US", {
+        month: "short",
+    });
+    return monthofYearName;
+};
+const toDayName = () => {
+    const dayOfWeekName = new Date().toLocaleString("en-US", {
+        weekday: "short",
+    });
+    return dayOfWeekName;
+  };
 </script>
 
 <style></style>

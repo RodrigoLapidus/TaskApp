@@ -11,23 +11,12 @@ const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 
-const socialLogin = ref(false);
-
 
 onMounted(async () => {
   const appReady = ref(null);
   try {
-    await userStore.fetchUser(); // here we call fetch user
-    console.log(user.value);
-    console.log(socialLogin.value);
-    console.log(socialLogin);
-
-    socialLogin = SignIn.socialLogin;
-    
-    if (!socialLogin) {
-      // continue to dashboard
-      router.push({ path: "/" });
-    } else if (!user.value) {
+    await userStore.fetchUser(); // here we call fetch user    
+    if (!user.value) {
       // redirect them to logout if the user is not there
       appReady.value = true;
       router.push({ path: "/auth/login" });
