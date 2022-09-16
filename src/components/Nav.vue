@@ -4,14 +4,14 @@
       <img class="h-10 pl-4" src="https://res.cloudinary.com/def7ecre1/image/upload/v1661513350/task%20app/TaskZilla-logo_jm6zms.jpg" alt="TaskZilla logo">
     <p class="text-gray-800 font-bold text-xl flex justify-start ml-1">TaskZilla</p>
     </div>
-    <div>
+    <div class="flex flex-row">
       <div class="flex flex-col justify-center">
         <div class="flex flex-row justify-between   items-center">
           <p class="font-semibold invisible   md:visible">Welcome back,&nbsp;</p>
           <p class="font-bold mr-2 invisible  md:visible"> {{ name[0] }}👋</p>
         </div>
         <div>
-          <p>{{ currentDateTime() }}</p>
+          <p class="invisible md:visible">{{ currentDateTime() }}</p>
         </div>
       </div>
       <SignOut />
