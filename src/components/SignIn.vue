@@ -34,17 +34,18 @@
                   class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
                 />
               </div>
-              <div id="input" class="flex flex-col w-full my-5">
+              <div id="input" class="flex flex-col relative w-full my-5">
                 <label for="password" class="text-gray-800 font-bold mb-2"
                   >Password</label
-                >
+                > 
                 <input
-                  type="password"
+                  :type="passwordFieldType"
                   id="password"
                   v-model="password"
                   placeholder="***********"
-                  class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
-                />
+                  class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"/>
+                  <EyeIcon @click="changeHidePasswordValue"  v-show="hidePassword" class="cursor-pointer h-5 w-5 absolute bottom-4 right-2 text-gray-200"/>
+                  <EyeIcon @click="changeHidePasswordValue" v-show="!hidePassword"  class="cursor-pointer h-5 w-5 absolute bottom-4 right-2 text-green-600"/>
               </div>
               <div id="button" class="flex flex-col w-full my-5">
                 <button
@@ -101,6 +102,8 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
 
+import { EyeIcon } from '@heroicons/vue/24/solid'
+
 // Route Variables
 const route = "/auth/sign-up";
 const buttonText = "Sign Up";
@@ -120,6 +123,14 @@ const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
 const hidePassword = ref(true);
+
+const changeHidePasswordValue = () => {
+  if (hidePassword.value === true) {
+    hidePassword.value = false;
+  } else {
+    hidePassword.value = true;
+  }
+};
 
 // Router to push user once SignedIn to the HomeView
 const redirect = useRouter();
