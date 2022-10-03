@@ -14,6 +14,7 @@
           <p class="invisible md:visible">{{ currentDateTime() }}</p>
         </div>
       </div>
+      <DarkMode />
       <SignOut />
     </div>
   </div>
@@ -22,6 +23,7 @@
 <script setup>
 
 import SignOut from "../components/SignOut.vue";
+import DarkMode from "./DarkMode.vue";
 import { useUserStore } from "../stores/user";
 
 const email = useUserStore().user.email

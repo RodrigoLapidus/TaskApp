@@ -36,4 +36,13 @@ onMounted(async () => {
   </div>
 </template>
 
-<style></style>
+<style>
+  /* Allows the operating system to make adjustments to the UI depending on the dark / light mode */
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply dark:bg-slate-700 dark:text-slate-50;
+  }
+</style>
